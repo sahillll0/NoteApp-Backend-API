@@ -11,7 +11,11 @@ console.log(_dirname);
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: ["https://note-app-frontend-seven.vercel.app"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
